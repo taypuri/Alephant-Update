@@ -2099,6 +2099,7 @@ section {
 html, body {
     scroll-behavior: smooth;
     height: 100%;
+    /* Versão atualizada: 2025-05-03 17:11 */
 }
 
 /* Pin Scrolling Section (O que você vai aprender) */
