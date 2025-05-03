@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 200 50">
+  <text x="10" y="35" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="#ffffff">
+    AI videolab
+  </text>
+  <rect x="140" y="10" width="5" height="30" fill="#ff4d00" rx="2" />
+</svg>
