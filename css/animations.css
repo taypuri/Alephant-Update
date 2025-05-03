@@ -1,0 +1,272 @@
+/* Animations for Human Academy Clone */
+
+/* Text reveal animation */
+.reveal-text {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.reveal-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent);
+    transform: translateX(-100%);
+    animation: text-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.reveal-text-delay::after {
+    animation-delay: 0.3s;
+}
+
+.reveal-text-delay-2::after {
+    animation-delay: 0.6s;
+}
+
+@keyframes text-reveal {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Fade in animation */
+.reveal-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal-fade.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-fade-delay {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease 0.3s, transform 1s ease 0.3s;
+}
+
+.reveal-fade-delay.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card reveal animation */
+.reveal-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered card animations */
+.cards-grid .reveal-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.cards-grid .reveal-card:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.cards-grid .reveal-card:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+/* Staggered process steps animations */
+.process-steps .reveal-card:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.process-steps .reveal-card:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.process-steps .reveal-card:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+.process-steps .reveal-card:nth-child(4) {
+    transition-delay: 0.7s;
+}
+
+/* Hover effects */
+.feature-card .card-inner, 
+.process-step .step-inner {
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .card-inner, 
+.process-step:hover .step-inner {
+    transform: translateY(-10px);
+}
+
+.cta-button, .buy-button, .whatsapp-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::after, .buy-button::after, .whatsapp-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover::after, .buy-button:hover::after, .whatsapp-button:hover::after {
+    left: 100%;
+}
+
+/* Scroll animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Pulse animation for CTA elements */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 77, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 77, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 77, 0, 0);
+    }
+}
+
+.buy-button {
+    animation: pulse 2s infinite;
+}
+
+/* Text gradient */
+.gradient-text {
+    background: linear-gradient(90deg, var(--white) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Background gradient animation */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Shimmer effect */
+.shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) rotate(30deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(30deg);
+    }
+}
+
+/* Mobile menu animation */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Scroll indicator animation */
+@keyframes scrollIndicator {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* Text typing animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent) }
+}
+
+/* Progress bar animation */
+@keyframes progress {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+/* Image hover animation */
+.image-hover {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-hover img {
+    transition: transform 0.5s ease;
+}
+
+.image-hover:hover img {
+    transform: scale(1.1);
+}

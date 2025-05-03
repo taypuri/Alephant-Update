@@ -1,0 +1,235 @@
+/* Content Sections Styles */
+
+/* Common Section Styling */
+.section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    font-size: 1.2rem;
+}
+
+/* Industry Section */
+.industry-section {
+    background-color: var(--black);
+    position: relative;
+}
+
+.industry-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="1" cy="1" r="0.6" fill="%23333" opacity="0.2"/></svg>');
+    background-size: 30px 30px;
+    opacity: 0.5;
+}
+
+.industry-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 77, 0, 0.1) 0%, transparent 70%);
+}
+
+.industry-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+}
+
+.industry-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(30, 30, 30, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.industry-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.industry-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    background-color: var(--accent-transparent);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.industry-content h3 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+
+/* Learning Section */
+.learning-section {
+    background-color: var(--near-black);
+}
+
+.learning-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+.learning-card {
+    background-color: var(--medium-gray);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.learning-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    background-color: var(--light-gray);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, var(--medium-gray), transparent);
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.card-text {
+    margin-bottom: 20px;
+    color: var(--text-gray);
+    flex-grow: 1;
+}
+
+.learn-more {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: auto;
+}
+
+/* Content Section */
+.content-section {
+    background-color: var(--black);
+    position: relative;
+}
+
+.content-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="1" cy="1" r="0.6" fill="%23ff4d00" opacity="0.1"/></svg>');
+    background-size: 30px 30px;
+    opacity: 0.3;
+}
+
+.content-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.content-item {
+    display: flex;
+    align-items: center;
+}
+
+.content-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    margin-right: 15px;
+    color: var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-text {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 70px 0;
+    }
+    
+    .section-title {
+        font-size: 2.8rem;
+    }
+    
+    .learning-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-list {
+        grid-template-columns: 1fr;
+    }
+}
