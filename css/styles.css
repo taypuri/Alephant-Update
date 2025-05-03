@@ -624,7 +624,7 @@ p {
     background-color: var(--black);
     position: relative;
     overflow: hidden;
-    min-height: 150vh; /* Aumentado para garantir espaço para scroll */
+    min-height: 300vh !important; /* Altura maior para acomodar todo o pin scrolling */
     padding: 0;
     overflow: visible !important; /* Mudado para visible para permitir que os elementos saiam do container */
     z-index: 1;
@@ -647,7 +647,7 @@ p {
     max-width: 1400px;
     margin: 0 auto;
     padding: 100px 20px;
-    min-height: 150vh; /* Aumentado para garantir espaço para scroll */
+    min-height: 100vh !important; /* Ocupa toda a viewport para pin correto */
     display: flex;
     flex-direction: column;
     overflow: visible !important; /* Crítico: permite que os elementos saiam do container */
@@ -665,7 +665,7 @@ p {
 
 .pin-content {
     position: relative;
-    height: 550px;
+    height: 100vh !important; /* Altura de viewport para animação dos cards */
     width: 100%;
     display: flex;
     justify-content: center;
@@ -694,7 +694,7 @@ p {
     height: 400px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    /* transform removido: uso de GSAP xPercent/yPercent para centralização */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     border-radius: var(--border-radius-md);
     overflow: hidden;
@@ -1990,7 +1990,7 @@ p {
     height: 400px;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    /* transform removido: uso de GSAP xPercent/yPercent para centralização */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     border-radius: var(--border-radius-md);
     overflow: hidden;
